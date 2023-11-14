@@ -1,12 +1,12 @@
-<? php require_once('../../private/initialize.php'); ?>
-
-<?
-$salamanders = array(
-    array('id' => 1, 'salamanderName' => 'Red-Legged Salamander'),
-    array('id' => 2, 'salamanderName' => 'Pigeon Mountain Salamander'),
-    array('id' => 3, 'salamanderName' => 'ZigZag Salamander'),
-    array('id' => 4, 'salamanderName' => 'Slimy Salamander')
-);
+<?php require_once('../../private/initialize.php'); ?>
+<!--file directory navigation correct.-->
+<?php
+$salamanders = [
+  ['id' => '1', 'salamanderName' => 'Red-Legged Salamander'],
+  ['id' => '2', 'salamanderName' => 'Pigeon Mountain Salamander'],
+  ['id' => '3', 'salamanderName' => 'ZigZag Salamander'],
+  ['id' => '4', 'salamanderName' => 'Slimy Salamander'],
+];
 ?>
 
 
@@ -14,8 +14,8 @@ $salamanders = array(
 Include a shared path to the salamander header -->
 
 <?php 
-$pageTitle = 'Salamanders';
-include_once(SHARED_PATH . '/salamander-header.php');
+$pageTitle = 'Salamanders';?>
+<?php include(SHARED_PATH . '/salamander-header.php');
 ?>
 
 <main>
@@ -30,19 +30,19 @@ include_once(SHARED_PATH . '/salamander-header.php');
       <th>&nbsp;</th>
       <th>&nbsp;</th>
     </tr>
+    <!-- Use url_for with show.php AND h(u) with the salamander['id'] -->
 
     <?php foreach($salamanders as $salamander) { ?>
     <tr>
-    <td><?= $salamander[id] ?></td>
+    <td><?= $salamander['id'] ?></td>
     <td><?= $salamander['salamanderName'] ?></td>
-    <td><a href="<? url_for('salamanders/show.php?id=' . h(u($salamander['id']))); ?>">View</a></td>
-    <!-- Use url_for with show.php AND h(u) with the salamander['id'] -->
+    <td><a href="<?php echo url_for('salamanders/show.php?id=' . h(u($salamander['id']))); ?>">View</a></td>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
     </tr>
-        <?php } ?>
+    <?php } ?>
   </table>
 </main>
 <footer>
-  <? php include_once(SHARED_PATH . '/salamander-footer.php'); ?>
+  <?php include(SHARED_PATH . '/salamander-footer.php'); ?>
 </footer>

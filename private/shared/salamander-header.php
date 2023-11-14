@@ -8,7 +8,7 @@
 
 <html lang="en">
   <head>
-    <title>SAS - <?= h($pageTitle); ?></title>
+    <title>SAS - <?php echo $pageTitle; ?></title>
     <meta charset="utf-8">
     <link rel="stylesheet" media="all" href="<?= url_for('/stylesheets/salamanders.css'); ?>" />
   </head>
