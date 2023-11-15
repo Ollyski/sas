@@ -17,10 +17,10 @@ Include a shared path to the salamander header -->
 $pageTitle = 'Salamanders';?>
 <?php include(SHARED_PATH . '/salamander-header.php');
 ?>
-
+  
 <main>
   <h1>Salamanders</h1>
-  <a href="#">Create Salamander</a>
+  <a href="<?= url_for('/salamanders/new.php'); ?>">Create A Salamander</a>
 
   <table>
     <tr>
@@ -37,7 +37,7 @@ $pageTitle = 'Salamanders';?>
     <td><?= $salamander['id'] ?></td>
     <td><?= $salamander['salamanderName'] ?></td>
     <td><a href="<?php echo url_for('salamanders/show.php?id=' . h(u($salamander['id']))); ?>">View</a></td>
-    <td><a href="#">Edit</a></td>
+    <td><a href="<?php echo url_for('salamanders/edit.php?id=' . h(u($salamander['id']))); ?>">">Edit</a></td>
     <td><a href="#">Delete</a></td>
     </tr>
     <?php } ?>
