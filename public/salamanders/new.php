@@ -1,19 +1,16 @@
 <?php require_once('../../private/initialize.php');
 
-$test = $_GET['test'] ?? '';
 
-if($test == '404') {
-  error_404();
-} elseif($test == '500') {
-  error_500();
-} elseif($test == 'redirect') {
-  redirect_to(url_for('/salamanders/index.php'));
-} 
+if (is_post_request()) {
+  $salamanderName = $_POST['salamanderName'];
+  echo "Salamander Name: $salamanderName";
+} else {
+ // redirect_to(url_for('/salamanders/new.php'));
+}
 
 $page_title = 'Create Salamander';
 include(SHARED_PATH . '/salamander-header.php'); 
 ?>
-
 
   <a href="index.php">< Back to List</a>
   <h1>Create Salamander</h1>

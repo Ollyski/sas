@@ -12,6 +12,8 @@ if($test == '404') {
 
 $page_title = 'Edit Salamander';
 include(SHARED_PATH . '/salamander-header.php'); 
+
+echo "<h1>Stub for edit.php</h1>";
 ?>
 
 
@@ -23,4 +25,5 @@ include(SHARED_PATH . '/salamander-header.php');
   <input type="text" name="salamanderName"><br>
   <input type="submit" value="Edit Salamander">
   </form>
+
 <?php include(SHARED_PATH . '/salamander-footer.php'); ?>
