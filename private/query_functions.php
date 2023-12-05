@@ -1,10 +1,10 @@
 <?php
   function find_all_salamanders() {
     global $db;
-    $sql = "SELECT * FROM salamanders ";
-    $sql .="ORDER BY position ASC";
+    $sql = "SELECT * FROM salamander ";
+    $sql .="ORDER BY name ASC";
     $result = mysqli_query($db, $sql);
-    confirm_result_set($result);
+    confirm_result_set($result, $sql);
     return $result;
   }
 ?>

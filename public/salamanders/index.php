@@ -3,7 +3,7 @@
 <?php
   
   $salamander_set = find_all_salamanders();
-
+  $page_title = 'Salamanders';
 ?>
 
 <?php 
