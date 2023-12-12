@@ -24,7 +24,7 @@
   }
 
   function confirm_result_set($result_set, $sql) {
-    global $db; // Add this line to access the global database connection variable
+    global $db; 
     if (!$result_set) {
         exit("Database query failed: " . mysqli_error($db) . " with SQL: " . $sql);
     }
